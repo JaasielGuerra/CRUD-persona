@@ -311,8 +311,12 @@ public class CrudPersonaController {
      * @return
      */
     private String obtenerNombreImagen(String ruta) {
-        String[] split = ruta.split(File.separator);
-        return split[split.length - 1];
+        String separador = File.separator;// "\\";
+        int ultimo_indice = ruta.lastIndexOf(separador);
+        
+        //String[] split = ruta.split(File.separator);
+        //return split[split.length - 1];
+        return ruta.substring(ultimo_indice+1);
     }
 
 }
